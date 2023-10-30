@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.test.dist_calculation.entity.City;
 import com.test.dist_calculation.entity.Distance;
+import com.test.dist_calculation.exception.EntityAlreadyExistsException;
 import com.test.dist_calculation.repository.DistanceRepository;
 import com.test.dist_calculation.service.CrowFlightDistanceCalculatorService;
 import com.test.dist_calculation.service.DistanceService;
@@ -46,7 +47,7 @@ public class DistanceServiceImpl implements DistanceService {
         if(!check_if_exist.isPresent()) {
             distanceRepository.save(distance);
         } else {
-            throw new RuntimeException("Distance between cities " + distance.getFromCity().getName() + " and " + distance.getToCity().getName() + " already exist");
+            throw new EntityAlreadyExistsException("Distance between cities " + distance.getFromCity().getName() + " and " + distance.getToCity().getName() + " already exist");
         }
     }
     

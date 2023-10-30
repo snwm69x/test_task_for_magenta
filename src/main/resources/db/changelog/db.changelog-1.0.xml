@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="snwm">
+    <!-- Вставка городов -->
+    <insert tableName="city">
+        <column name="name" value="Moscow"/>
+        <column name="latitude" value="55.75"/>
+        <column name="longitude" value="37.62"/>
+    </insert>
+    <insert tableName="city">
+        <column name="name" value="Samara"/>
+        <column name="latitude" value="53.2"/>
+        <column name="longitude" value="50.15"/>
+    </insert>
+    <insert tableName="city">
+        <column name="name" value="Kazan"/>
+        <column name="latitude" value="55.79"/>
+        <column name="longitude" value="49.12"/>
+    </insert>
+    <insert tableName="city">
+        <column name="name" value="Kaliningrad"/>
+        <column name="latitude" value="54.71"/>
+        <column name="longitude" value="20.51"/>
+    </insert>
+    <insert tableName="city">
+        <column name="name" value="Ufa"/>
+        <column name="latitude" value="54.74"/>
+        <column name="longitude" value="55.97"/>
+    </insert>
+    <insert tableName="city">
+        <column name="name" value="Omsk"/>
+        <column name="latitude" value="54.99"/>
+        <column name="longitude" value="73.37"/>
+    </insert>
+    <!-- Вставка дистанций -->
+    <insert tableName="distance">
+        <column name="from_city_id" value="2"/>
+        <column name="to_city_id" value="5"/>
+        <column name="distance" value="417257.16525085137"/>
+    </insert>
+    <insert tableName="distance">
+        <column name="from_city_id" value="1"/>
+        <column name="to_city_id" value="4"/>
+        <column name="distance" value="1088369.438223955"/>
+    </insert>
+    <insert tableName="distance">
+        <column name="from_city_id" value="3"/>
+        <column name="to_city_id" value="4"/>
+        <column name="distance" value="1804421.4226617727"/>
+    </insert>
+</changeSet>
+
+</databaseChangeLog>

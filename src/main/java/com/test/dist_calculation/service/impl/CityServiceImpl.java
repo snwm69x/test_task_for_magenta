@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.test.dist_calculation.entity.City;
+import com.test.dist_calculation.exception.EntityAlreadyExistsException;
+import com.test.dist_calculation.exception.EntityNotExistsException;
 import com.test.dist_calculation.repository.CityRepository;
 import com.test.dist_calculation.service.CityService;
 
@@ -29,7 +31,7 @@ public class CityServiceImpl implements CityService {
     public City getCityById(Long id) {
         Optional<City> city = cityRepository.findById(id);
         if (!city.isPresent()) {
-            throw new RuntimeException("City with id " + id + " not found");
+            throw new EntityNotExistsException("City with id " + id + " not found");
         }
         return city.get();
     }
@@ -38,7 +40,7 @@ public class CityServiceImpl implements CityService {
     public City getCityByName(String name) {
         Optional<City> city = cityRepository.findByName(name);
         if (!city.isPresent()) {
-            throw new RuntimeException("City with name " + name + " not found");
+            throw new EntityNotExistsException("City with name " + name + " not found");
         }
         return city.get();
     }
@@ -60,7 +62,7 @@ public class CityServiceImpl implements CityService {
     public void deleteCity(City city) {
         Optional<City> old_city = cityRepository.findById(city.getId());
         if (!old_city.isPresent()) {
-            throw new RuntimeException("City with id " + city.getId() + " cannot be deleted because it does not exist");
+            throw new EntityNotExistsException("City with id " + city.getId() + " cannot be deleted because it does not exist");
         }
         cityRepository.delete(city);
     }
@@ -71,7 +73,7 @@ public class CityServiceImpl implements CityService {
         if (!old_city.isPresent()) {
             cityRepository.save(city);
         } else {
-            throw new RuntimeException("City with id " + city.getId() + " already exist");
+            throw new EntityAlreadyExistsException("City with id " + city.getId() + " already exist");
         }
     }
 
