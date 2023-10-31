@@ -2,7 +2,6 @@ package com.test.dist_calculation.service.impl;
 
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.test.dist_calculation.entity.City;
@@ -15,10 +14,7 @@ import com.test.dist_calculation.service.DistanceService;
 @Service
 public class DistanceServiceImpl implements DistanceService {
 
-    @Autowired
     private final DistanceRepository distanceRepository;
-
-    @Autowired
     private final CrowFlightDistanceCalculatorService crowFlightDistanceCalculatorService;
 
     public DistanceServiceImpl(DistanceRepository distanceRepository, CrowFlightDistanceCalculatorService crowFlightDistanceCalculatorService) {

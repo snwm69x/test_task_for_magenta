@@ -3,7 +3,6 @@ package com.test.dist_calculation.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +13,7 @@ import com.test.dist_calculation.service.CityService;
 
 @RestController
 public class CitiesController {
-    @Autowired
+
     private final CityService cityService;
     
     public CitiesController(CityService cityService) {

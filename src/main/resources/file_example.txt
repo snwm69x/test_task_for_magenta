@@ -1,0 +1,20 @@
+<CityAndDistanceWrapper>
+    <cities>
+        <city>
+            <name>Lipetsk</name>
+            <latitude>52.6</latitude>
+            <longitude>39.57</longitude>
+        </city>
+        <city>
+            <name>Omsk</name>
+            <latitude>54.99</latitude>
+            <longitude>73.37</longitude>
+        </city>
+    </cities>
+    <distances>
+        <distance>
+            <fromCity>Kazan</fromCity>
+	    <toCity>Kaliningrad</toCity>
+        </distance>
+    </distances>
+</CityAndDistanceWrapper>

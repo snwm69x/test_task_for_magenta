@@ -2,7 +2,6 @@ package com.test.dist_calculation.controller;
 
 import java.io.IOException;
 import java.io.InputStream;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,13 +22,9 @@ import com.test.dist_calculation.util.CityAndDistanceWrapper;
 @Controller
 public class FileController {
 
-    @Autowired
+
     private final CityService cityService;
-
-    @Autowired
     private final DistanceService distanceService;
-
-    @Autowired
     private final CrowFlightDistanceCalculatorService crowFlightDistanceCalculatorService;
 
     public FileController(CityService cityService, DistanceService distanceService, CrowFlightDistanceCalculatorService crowFlightDistanceCalculatorService) {

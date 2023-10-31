@@ -3,7 +3,6 @@ package com.test.dist_calculation.service.impl;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.test.dist_calculation.entity.City;
@@ -15,7 +14,6 @@ import com.test.dist_calculation.service.CityService;
 @Service
 public class CityServiceImpl implements CityService {
 
-    @Autowired
     private final CityRepository cityRepository;
 
     public CityServiceImpl(CityRepository cityRepository) {
